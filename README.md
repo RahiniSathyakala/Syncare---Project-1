@@ -184,7 +184,7 @@ Continuous Learning Loop
 
 <img width="1920" height="920" alt="Image" src="https://github.com/user-attachments/assets/37992749-7753-43d9-9976-eac127843a04" />
 
-<img width="1920" height="922" alt="Image" src="https://github.com/user-attachments/assets/f6ab8da6-a6ac-4702-b2a0-9261307b6e10" />
+<img width="1920" height="895" alt="Image" src="https://github.com/user-attachments/assets/49a32ca1-9e1e-48ea-a456-1a797a6d96b9" />
 
 ### Family Dashboard
 [Family Dashboard]
