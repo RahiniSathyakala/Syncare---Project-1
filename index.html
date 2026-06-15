@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syncare v2.0 - Patient Monitoring App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="appbar">
+    <a class="brand" href="#home" aria-label="Syncare home">
+      <span class="brand-mark">S</span>
+      <span>Syncare</span>
+    </a>
+    <nav aria-label="App navigation">
+      <a href="#monitor">Monitor</a>
+      <a href="#family">Family</a>
+      <a href="#report">Report</a>
+    </nav>
+    <button id="demoBtnTop" class="primary small" type="button">Play Demo</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-scene" aria-hidden="true">
+        <div class="grid-bg"></div>
+        <div class="scan-line"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">AI-Powered Patient Monitoring System</p>
+        <h1>Syncare</h1>
+        <p>No patient unseen. No life lost due to delay.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#monitor">Start Monitoring</a>
+          <button id="viewDemoBtn" class="secondary" type="button">View Demo</button>
+        </div>
+      </div>
+      <aside class="hero-device" aria-label="Live vitals preview">
+        <div class="device-head">
+          <span>Room 204B</span>
+          <strong id="miniStatus">Stable</strong>
+        </div>
+        <canvas id="heroWave" width="620" height="190"></canvas>
+        <div class="mini-vitals">
+          <span>HR <b id="miniHr">78</b></span>
+          <span>SpO2 <b id="miniSpo2">98</b>%</span>
+          <span>BP <b id="miniBp">122/78</b></span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="monitor" class="screen">
+      <div class="screen-head">
+        <div>
+          <p class="eyebrow">Patient Dashboard</p>
+          <h2>Aarav Mehta</h2>
+          <p>Age 68 - COPD observation - Home care unit</p>
+        </div>
+        <div class="network-card">
+          <span>Network</span>
+          <button id="offlineToggle" class="toggle" type="button" aria-pressed="false"><span></span></button>
+          <strong id="networkState">ONLINE</strong>
+        </div>
+      </div>
+
+      <div class="vitals">
+        <article data-type="heart"><span>Heart Rate</span><strong><b id="hr">78</b> bpm</strong><small id="hrTrend">normal sinus rhythm</small></article>
+        <article data-type="oxygen"><span>SpO2</span><strong><b id="spo2">98</b>%</strong><small id="spo2Trend">steady oxygenation</small></article>
+        <article data-type="blood"><span>Blood Pressure</span><strong id="bp">122/78</strong><small>mmHg</small></article>
+        <article data-type="temp"><span>Temperature</span><strong><b id="temp">98.4</b> F</strong><small>afebrile</small></article>
+        <article data-type="resp"><span>Respiration</span><strong><b id="resp">16</b>/min</strong><small id="respTrend">comfortable breathing</small></article>
+      </div>
+
+      <div class="monitor-grid">
+        <section class="panel graph-panel">
+          <div class="panel-head">
+            <h3>Real-Time Graphs</h3>
+            <span id="clock">02:00:00 AM</span>
+          </div>
+          <canvas id="mainWave" width="980" height="340"></canvas>
+          <div class="legend"><span class="dot red"></span> HR <span class="dot blue"></span> SpO2 <span class="dot green"></span> Respiration</div>
+        </section>
+
+        <aside class="panel score-panel">
+          <div class="panel-head">
+            <h3>AI Health Score</h3>
+            <span id="scoreLabel">Stable</span>
+          </div>
+          <div class="score-ring"><span id="score">92%</span></div>
+          <div class="score-bar"><span id="scoreFill"></span></div>
+          <p id="prediction">AI Prediction: Vitals stable. No deterioration expected.</p>
+          <p id="edgeNotice" class="edge hidden">Edge AI Activated. Local alerts enabled. Messages queued.</p>
+        </aside>
+      </div>
+
+      <section class="scenario-panel">
+        <div>
+          <p class="eyebrow">Emergency Simulation Engine</p>
+          <h3>Trigger a live emergency scenario</h3>
+        </div>
+        <div class="scenario-row">
+          <button data-scenario="cardiac" type="button">Simulate Cardiac Emergency</button>
+          <button data-scenario="respiratory" type="button">Simulate Respiratory Emergency</button>
+          <button data-scenario="sepsis" type="button">Simulate Sepsis</button>
+          <button data-scenario="recovery" type="button">Simulate Recovery</button>
+          <button id="demoBtn" class="primary" type="button">Play Full Emergency Scenario</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="screen response-screen">
+      <div class="response-grid">
+        <section class="panel">
+          <div class="panel-head"><h3>Alert Workflow</h3><span id="workflowStatus">Ready</span></div>
+          <ol id="workflow" class="workflow">
+            <li><span>Hospital</span><b>Waiting</b></li>
+            <li><span>Ambulance</span><b>Waiting</b></li>
+            <li><span>Nursing Team</span><b>Waiting</b></li>
+            <li><span>Family</span><b>Waiting</b></li>
+          </ol>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h3>First Aid Assistant</h3><span>Immediate Guidance</span></div>
+          <ul class="guidance">
+            <li>Sit patient upright.</li>
+            <li>Administer oxygen if available.</li>
+            <li>Monitor consciousness.</li>
+            <li>Prepare medical history.</li>
+            <li>Await emergency responders.</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h3>Learning Loop</h3><span>AI Insights</span></div>
+          <p id="learningText">Learning loop standing by. New incidents will be compared with historical patterns.</p>
+          <button id="reportBtn" class="secondary full" type="button">Generate Report</button>
+        </section>
+      </div>
+    </section>
+
+    <section id="report" class="screen report-screen">
+      <div class="screen-head">
+        <div>
+          <p class="eyebrow">AI Incident Report Generator</p>
+          <h2>SYNCare Emergency Report</h2>
+          <p>Structured clinical summary generated after an event.</p>
+        </div>
+      </div>
+      <article id="reportCard" class="report-card">
+        <dl>
+          <div><dt>Date</dt><dd id="reportDate">Not generated</dd></div>
+          <div><dt>Detected Event</dt><dd id="reportEvent">Awaiting scenario</dd></div>
+          <div><dt>Vitals Before Event</dt><dd id="reportVitals">HR 78 - SpO2 98 - BP 122/78</dd></div>
+          <div><dt>Probable Cause</dt><dd id="reportCause">No acute event detected.</dd></div>
+          <div><dt>Suggested Interventions</dt><dd id="reportIntervention">Continue observation.</dd></div>
+          <div><dt>Alert Recipients</dt><dd>Hospital, ambulance, nursing team, family</dd></div>
+        </dl>
+        <button id="downloadReport" class="primary" type="button">Download as PDF</button>
+      </article>
+    </section>
+
+    <section id="family" class="screen family-screen">
+      <div class="screen-head">
+        <div>
+          <p class="eyebrow">Family Dashboard</p>
+          <h2>Last 7 Days</h2>
+          <p>Simple health trends and emergency history for family members.</p>
+        </div>
+      </div>
+      <div class="family-metrics">
+        <article><span>Average Stability</span><strong>89%</strong></article>
+        <article><span>Emergencies</span><strong>2</strong></article>
+        <article><span>Alerts Resolved</span><strong>2</strong></article>
+      </div>
+      <div class="family-grid">
+        <section class="panel">
+          <div class="panel-head"><h3>Stability Timeline</h3><span>Health Trends</span></div>
+          <canvas id="familyChart" width="900" height="280"></canvas>
+        </section>
+        <aside class="panel">
+          <div class="panel-head"><h3>Alert History</h3><span>Resolved</span></div>
+          <div class="history"><time>12 Jun</time><b>Respiratory Distress</b><span>High</span></div>
+          <div class="history"><time>18 Jun</time><b>Hypertension</b><span>Moderate</span></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="criticalOverlay" class="critical hidden" role="alertdialog" aria-modal="true" aria-labelledby="criticalTitle">
+    <div class="critical-inner">
+      <p class="eyebrow">Critical Alert Detected</p>
+      <h2 id="criticalTitle">Acute Respiratory Distress</h2>
+      <div class="critical-grid">
+        <span>Possible Cause</span><strong id="criticalCause">Acute Respiratory Distress</strong>
+        <span>Severity</span><strong id="criticalSeverity">HIGH</strong>
+        <span>Countdown</span><strong><b id="countdown">10</b>s</strong>
+      </div>
+      <p>Emergency protocol initiated...</p>
+      <button id="dismissAlert" class="primary" type="button">Continue Dashboard</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
