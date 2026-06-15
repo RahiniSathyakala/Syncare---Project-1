@@ -168,16 +168,28 @@ Continuous Learning Loop
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](screenshots/landing-page.png)
+[Landing Page]
+
+<img width="1920" height="915" alt="Image" src="https://github.com/user-attachments/assets/e5a8df48-f0cf-4817-8e16-0776bbc59a7d" />
 
 ### Real-Time Dashboard
-![Dashboard](screenshots/dashboard.png)
+[Dashboard]
+
+<img width="1920" height="916" alt="Image" src="https://github.com/user-attachments/assets/34468832-d54f-4669-9038-ac646c5ae54a" />
+
+<img width="1920" height="914" alt="Image" src="https://github.com/user-attachments/assets/c24b7dda-d040-43f4-b8b8-c554023c81cd" />
 
 ### Emergency Alert System
-![Emergency Alert](screenshots/emergency-alert.png)
+[Emergency Alert]
+
+<img width="1920" height="920" alt="Image" src="https://github.com/user-attachments/assets/37992749-7753-43d9-9976-eac127843a04" />
+
+<img width="1920" height="922" alt="Image" src="https://github.com/user-attachments/assets/f6ab8da6-a6ac-4702-b2a0-9261307b6e10" />
 
 ### Family Dashboard
-![Family Dashboard](screenshots/family-dashboard.png)
+[Family Dashboard]
+
+<img width="1920" height="922" alt="Image" src="https://github.com/user-attachments/assets/f6ab8da6-a6ac-4702-b2a0-9261307b6e10" />
 
 ---
 
